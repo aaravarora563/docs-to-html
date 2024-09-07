@@ -33,7 +33,7 @@ document.getElementById('uploadForm').addEventListener('submit', async (event) =
         }
 
         // Get the converted content
-        const result = await response.text();
+        const result = await response.text(); // Use .json() if backend returns JSON
         outputTextArea.value = result;
     } catch (error) {
         console.error('Error:', error);
