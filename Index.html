@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Converter</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            max-width: 900px;
+            margin: auto;
+        }
+        .form-container {
+            background-color: #fff;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            width: 100%;
+        }
+        h1 {
+            margin: 0;
+            font-size: 2rem;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        input[type="file"], select, button {
+            margin: 10px 0;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        textarea {
+            width: 100%;
+            height: 300px;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-top: 20px;
+            font-size: 1rem;
+            box-sizing: border-box;
+            resize: vertical;
+        }
+        @media (max-width: 600px) {
+            .container {
+                padding: 10px;
+            }
+            textarea {
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Document Converter</h1>
+    </header>
+    <div class="container">
+        <div class="form-container">
+            <h2>Upload and Convert Your Document</h2>
+            <form id="uploadForm">
+                <input type="file" id="fileInput" name="document" accept=".ppt,.pptx,.doc,.docx" required>
+                <select id="formatSelect" name="format" required>
+                    <option value="html">HTML</option>
+                    <option value="markdown">Markdown</option>
+                    <option value="xml">XML</option>
+                </select>
+                <button type="submit">Upload and Convert</button>
+            </form>
+        </div>
+        <h2>Converted Output</h2>
+        <textarea id="output" readonly></textarea>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
